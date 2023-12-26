@@ -2,5 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 body{
-    background-color: #CCCCCC;
+    /* background-color: #CCCCCC; */
+    font-family: 'Poppins', sans-serif;
 }
+.dark {
+    background-color: #333;
+    color: #fff;
+  }
+  .light {
+    background-color: #fff;
+    color: #333;
+  }
+  

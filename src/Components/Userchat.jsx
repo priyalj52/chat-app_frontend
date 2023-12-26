@@ -32,10 +32,10 @@ return shorttext
       markThisUserNotifAsRead(thisUserNotif,notif)
     }}>
       <div className="flex-col items-center justify-center ">
-        <div className="flex-[0.4] flex items-start gap-3 justify-center   ">
+        <div className="flex-[0.4] flex items-start gap-3    ">
           <div className="">
             <img
-              class="w-10 h-15 rounded-3xl"
+              class="w-20 h-15 rounded-3xl"
               src={userImg}
               alt="Default avatar"
             ></img>
@@ -43,7 +43,7 @@ return shorttext
           <div className="flex justify-between  items-center gap-6 w-[14rem]">
             <div className=" flex flex-col">
               {/* priyal and text flex col  */}
-              <div>{recipientUser?.user?.name}</div>
+              <div className="font-bold capitalize">{recipientUser?.user?.name}</div>
               <div>{latestMsg?.text && (<span>{truncateText(latestMsg?.text)}</span>)}</div>
             </div>
             <div className=" flex flex-col items-center ml-auto">

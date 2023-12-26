@@ -28,9 +28,9 @@ console.log("mod",modifiedNotif)
 {isNotifOpen && (
 <div className='bg-white'>
 
-<div className='bg-white flex items-between justify-end gap-3'>
+<div className='bg-black text-white flex items-between justify-end gap-3'>
 <span>Notifications</span>
-    <span onClick={()=>markAllNotifAsRead(notif)}>Mark all as Read</span>
+    <span onClick={()=>markAllNotifAsRead(notif)} className='cursor-pointer'>Mark all as Read</span>
 
    
    

@@ -51,10 +51,13 @@ export const Chat = () => {
               );
             })}
           </div>
-          <div className=" flex-[0.6] bg-gray-400 h-[100vh]">
-          <div className=" flex flex-col justify-end ">
+          <div className=" flex-[0.6] bg-[#292929]  text-white">
+          <div className=" flex flex-col  ">
+            <div className="">
             <ChatBox />
-            <div className="flex m-2">
+            </div>
+         
+            <div className="flex m-2 ">
               <InputEmoji
                 value={text}
                 onChange={setText}

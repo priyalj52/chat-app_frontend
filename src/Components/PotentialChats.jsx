@@ -22,7 +22,7 @@ const PotentialChats = () => {
         potentialChats.map((u, index) => {
           return (
             <div key={index} onClick={() => createChat(user.id, u._id)}>
-              <span className="bg-gray-400 capitalize text-white p-2 rounded-lg text-center">
+              <span className="bg-gray-400 capitalize font-bold text-white p-2 rounded-lg text-center">
                 {u.name}
                 <span
                   className={`${

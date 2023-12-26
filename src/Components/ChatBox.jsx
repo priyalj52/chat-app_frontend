@@ -22,39 +22,47 @@ const ChatBox = () => {
   }, [messages]);
 
   if (!recipientUser)
-    return <p className="text-center ">No conversation selected !!!</p>;
+    return <p className="text-center mb-[70vh] ">No conversation selected !!!</p>;
   if (isMessageLoading) return <p>Loading Chat Messages</p>;
   if (recipientUser)
     return (
-      <>
-        <div className="bg-gray-500/50 text-center  ">
-          <strong className="capitalize">{recipientUser?.user?.name}</strong>
+      <div className="flex flex-col  justify-between h-[70vh]">
+        <div className="bg-black/20  text-center  ">
+          <strong className="capitalize text-white ">{recipientUser?.user?.name}</strong>
         </div>
-        <div className="overflow-y-auto ">
+        <div className="overflow-y-auto bg-black text-black/20 ">
           {messages &&
             messages.map((msg, index) => (
               <div
                 key={index}
                 className={`${
                   msg?.senderId === user?.id
-                    ? "flex justify-end "
+                    ? "flex justify-end rounded"
                     : "flex justify-start"
                 } p-2  `}
                 ref={scroll}
               >
-                <div className="flex-col flex ">
-                  <div className="text-lg bg-black text-white  p-2 ">
+                <div className="bg-white rounded ">
+
+             
+                <div className="flex-col flex  ">
+                
+
+              
+                  <div className="text-lg  text-black p-2 ">
                     {msg?.text}
                   </div>
-                  <div className="text-xs bg-white  rounded p-1">
+                  <div className="text-xs  rounded p-1 " style={{width:'fit-content'}}>
                     {moment(msg.createdAt).calendar()}
+                
+                  </div>
                   </div>
                 </div>
                 <div></div>
               </div>
             ))}
         </div>
-      </>
+      </div>
     );
 };
 
