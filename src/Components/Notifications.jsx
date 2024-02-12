@@ -22,20 +22,20 @@ console.log("mod",modifiedNotif)
 {/* Notifications */}
 <div  className='flex' onClick={()=>setIsNotifOpen(!isNotifOpen)}>
 <BsFillChatLeftFill size={25}/>
-{(unreadNotif?.length===0)?null:(<span className='absolute top-2 right-[5.5rem] h-[20px] w-[20px] bg-gray-200 rounded-3xl text-center '>{unreadNotif?.length} </span>)}
+{(unreadNotif?.length===0)?null:(<span className=' h-[20px] text-bold text-center w-[20px] bg-gray-200 rounded-3xl text-center text-black '>{unreadNotif?.length} </span>)}
 </div>
 
 {isNotifOpen && (
 <div className='bg-white'>
 
-<div className='bg-black text-white flex items-between justify-end gap-3'>
-<span>Notifications</span>
-    <span onClick={()=>markAllNotifAsRead(notif)} className='cursor-pointer'>Mark all as Read</span>
+<div className='bg-black  flex items-between justify-end gap-3 bg-gray-100 rounded text-black'>
+<span className=''>Notifications</span>
+    <span onClick={()=>markAllNotifAsRead(notif)} className='cursor-pointer bg-gray-100 rounded'>Mark all as Read</span>
 
    
    
 </div>
-{modifiedNotif.length===0?<span>No notification yet</span>:null}
+{modifiedNotif.length===0?<span className='text-black'>No notification yet</span>:null}
 {modifiedNotif && modifiedNotif.map((n,ind)=>{
     return(
         <div key={ind} className={n.isRead?' text-black':'bg-black text-white'} onClick={()=> { markNotifRead(n,user,userChats,notif) ; setIsNotifOpen(false)} } >

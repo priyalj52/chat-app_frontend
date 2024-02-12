@@ -36,8 +36,20 @@ export const AuthContextProvider = ({ children }) => {
 
   useEffect(() => {
     const user = localStorage.getItem("user");
-    setUser(JSON.parse(user)); //convert string to json
-  }, []);
+    console.log(user, "user from storage");
+
+    try {
+        if (user) {
+            setUser(JSON.parse(user)); // convert string to JSON
+        } else {
+            // Handle the case where user is null or undefined
+            console.warn("User data not found in localStorage");
+        }
+    } catch (error) {
+        // Handle the case where JSON parsing fails
+        console.error("Error parsing user data from localStorage:", error);
+    }
+}, []);
 
   // this is for setting values of reisterinfo with change in input
   const updateUserInfo = useCallback(
@@ -86,7 +98,7 @@ export const AuthContextProvider = ({ children }) => {
         `${baseURL}/user/login`,
         JSON.stringify(loginInfo)
       );
-      console.log("response", response);
+      console.log("response on login", response);
       setIsLoginLoading(false);
       if (response.error) return setLoginError(response.msg);
 

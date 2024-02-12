@@ -32,8 +32,8 @@ const [allUsers,setAllUsers]=useState([])
 
   //initial socket
   useEffect(() => {
-    // const newSocket = io("http://localhost:5000"); //spcket port
-    const newSocket = io("http://chat-app-socket-p8dp.onrender.com"); 
+    const newSocket = io("http://localhost:5000"); //spcket port
+    // const newSocket = io("http://chat-app-socket-p8dp.onrender.com"); 
   
     console.log("socket connected on 5000 client")
     newSocket.connect()
@@ -72,7 +72,7 @@ const [allUsers,setAllUsers]=useState([])
     console.log("new msg send socket recid",recipientUserId)
     // const messageToSend = [];
     // console.log("new msg send socket is message",messageToSend)
-    socket.emit("sendMsg ", {...newMsg, recipientUserId});
+    socket.emit("sendMsg", {...newMsg, recipientUserId});
   }, [newMsg]);
 
   //recieve text msg+notif
@@ -127,25 +127,7 @@ setNotif((prev)=>[res,...prev])
   useEffect(() => {
     const getUsers = async () => {
       const response = await getRequest(`${baseURL}/user`); //brings all the users
-      //response looks something like this
-  //   {
-  //     "_id": "650fd30fc0499de6e5e34967",
-  //     "name": "PRIYAL",
-  //     "email": "pri123@gmail.com",
-  //     "password": "$2b$10$I24fg9Ek6xL3pUBdyd.PROyHXaaGFgYZMURJL8X8DvjBnb4BKRNXS",
-  //     "createdAt": "2023-09-24T06:11:27.499Z",
-  //     "updatedAt": "2023-09-24T06:11:27.499Z",
-  //     "__v": 0
-  // },
-  // {
-  //     "_id": "65106db0a8be7fb4ea4be862",
-  //     "name": "ram",
-  //     "email": "ram123@gmail.com",
-  //     "password": "$2b$10$CdvXMFXwb3oRPO/1aIvhEO77r2PSqVfoWKRobNJD2oo6r8dK75qkW",
-  //     "createdAt": "2023-09-24T17:11:12.698Z",
-  //     "updatedAt": "2023-09-24T17:11:12.698Z",
-  //     "__v": 0
-  // },
+ 
       if (response.error)
         return console.log("error in fetching users", response.error);
       //list all the potential chats
@@ -178,20 +160,7 @@ setNotif((prev)=>[res,...prev])
           secondId,
         })
       );
-      //response is  something like this
-    //   {
-    //     "response": {
-    //         "members": [
-    //             "651071a8b4cba034f1130bfc",
-    //             "6510772d4013136b01cc3a75"
-    //         ],
-    //         "_id": "65323ecda4611b76ba115e80",
-    //         "createdAt": "2023-10-20T08:48:13.794Z",
-    //         "updatedAt": "2023-10-20T08:48:13.794Z",
-    //         "__v": 0
-    //     },
-    //     "msg": "Chat created successfully"
-    // }
+      
 
       console.log("response from create", response);
       console.log("usechats in create before exceute function", userChats);
@@ -234,27 +203,7 @@ setNotif((prev)=>[res,...prev])
       setMessagesLoading(false);
       if (response.error) return setMessageError(response.msg);
       setMessages(response?.messages);//all messages of that chat
-      // {
-      //   "msg": "Here are all your messages ...",
-      //   "messages": [
-      //       {
-      //           "_id": "652898604ac0025a4b7ee2db",
-      //           "chatId": "65245282ba45e8f24de86df1",
-      //           "senderId": "65107204b4cba034f1130bff",
-      //           "text": "hi shimmi",
-      //           "createdAt": "2023-10-13T01:07:44.847Z",
-      //           "updatedAt": "2023-10-13T01:07:44.847Z",
-      //           "__v": 0
-      //       },
-      //       {
-      //           "_id": "652898914ac0025a4b7ee2ee",
-      //           "chatId": "65245282ba45e8f24de86df1",
-      //           "senderId": "651071a8b4cba034f1130bfc",
-      //           "text": "hi happy.",
-      //           "createdAt": "2023-10-13T01:08:33.972Z",
-      //           "updatedAt": "2023-10-13T01:08:33.972Z",
-      //           "__v": 0
-      //       },
+   
     };
     getMessages();
   }, [currentChat]);
