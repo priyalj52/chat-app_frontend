@@ -30,7 +30,7 @@ export const Chat = () => {
     <>
       <PotentialChats />
       {userChats?.length < 1 ? null : (
-        <div className="flex  items-start gap-5 m-5 justify-start ">
+        <div className="flex  items-start gap-5 m-5 justify-start  ">
           {isChatLoading && <p>Loading chats......</p>}
           <div className="flex-[0.4]">
             {userChats?.map((chat, index) => {

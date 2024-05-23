@@ -30,7 +30,7 @@ const Navbar = () => {
   return (
     <div className="bg-black/20 flex justify-between items-center p-4">
       <div className="flex items-center justify-center">
-        <Link to="/" >Chat App
+        <Link to="/" >Vchat
        
         </Link>
         <img src={icon} alt="" srcset="" width={'40px'} />

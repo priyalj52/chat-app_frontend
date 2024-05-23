@@ -52,7 +52,7 @@ const ChatBox = () => {
                   <div className="text-lg  text-black p-2 ">
                     {msg?.text}
                   </div>
-                  <div className="text-xs  rounded p-1 " style={{width:'fit-content'}}>
+                  <div className="text-xs  rounded p-1 text-[##9CA3AF] font-semibold" style={{width:'fit-content'}}>
                     {moment(msg.createdAt).calendar()}
                 
                   </div>

@@ -1,5 +1,6 @@
-export const baseURL = "http://localhost:8080/api";
-// export const baseURL = "https://chat-app-backend-9sfd.onrender.com/api";
+// export const baseURL = "http://localhost:8080/api";
+export const baseURL = process.env.REACT_APP_SERVER_URL;
+console.log('REACT_APP_SERVER_URL:', process.env.REACT_APP_SERVER_URL);
 
 export const postRequest = async (url, body) => {
   console.log("body", body);

@@ -27,15 +27,15 @@ return shorttext
 }
 
   return (
-    <div className="flex-col " onClick={()=>{
+    <div className="flex-col cursor-pointer hover:bg-[#9CA3AF] "  onClick={()=>{
       if(thisUserNotif?.length !==0)
       markThisUserNotifAsRead(thisUserNotif,notif)
     }}>
-      <div className="flex-col items-center justify-center ">
-        <div className="flex-[0.4] flex items-start gap-3    ">
-          <div className="">
+      <div className="flex-col items-center justify-center hover:bg-[#9CA3AF]">
+        <div className="flex-[0.4] flex items-start gap-3  hover:bg-[#9CA3AF]  ">
+          <div className=" ">
             <img
-              class="w-20 h-15 rounded-3xl"
+              class="w-20 h-15 rounded-[20rem] p-2 "
               src={userImg}
               alt="Default avatar"
             ></img>

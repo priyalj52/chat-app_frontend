@@ -32,8 +32,9 @@ const [allUsers,setAllUsers]=useState([])
 
   //initial socket
   useEffect(() => {
-    const newSocket = io("http://localhost:5000"); //spcket port
-    // const newSocket = io("http://chat-app-socket-p8dp.onrender.com"); 
+    //socket port
+    // const newSocket = io("http://localhost:5000");
+    const newSocket = io(process.env.REACT_APP_SOCKET_URL); 
   
     console.log("socket connected on 5000 client")
     newSocket.connect()

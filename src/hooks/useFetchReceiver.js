@@ -6,12 +6,12 @@ export const useFetchReciever = ({ currentChat, user }) => {
   const [error, setError] = useState(null);
 
   
-  console.log(
-    "user jo hook mei",
-    user,
-    "currentChat jo hook mei aayi",
-    currentChat
-  );
+  // console.log(
+  //   "user jo hook mei",
+  //   user,
+  //   "currentChat jo hook mei aayi",
+  //   currentChat
+  // );
   const recipientUserId = currentChat?.members.find((id) => id !== user?.id);
   console.log(
     "useFetchRecipient",

@@ -21,8 +21,8 @@ const PotentialChats = () => {
       {potentialChats &&
         potentialChats.map((u, index) => {
           return (
-            <div key={index} onClick={() => createChat(user.id, u._id)}>
-              <span className="bg-gray-400 capitalize font-bold text-white p-2 rounded-lg text-center">
+            <div key={index} onClick={() => createChat(user.id, u._id)} title="Click to start conversation">
+              <span className="bg-gray-400 capitalize font-bold text-white p-2 rounded-lg text-center cursor-pointer">
                 {u.name}
                 <span
                   className={`${
